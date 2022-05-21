@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  database:
+    image: mysql:5.7
+    container_name: mysql_dart_exercicio1
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'exercicio1'   
+      MYSQL_USER: 'dart'
+      MYSQL_PASSWORD: 'dart'      
+      MYSQL_ROOT_PASSWORD: 'dart'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - './.mysql-data/db:/var/lib/mysql'
